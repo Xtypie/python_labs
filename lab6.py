@@ -6,8 +6,8 @@ def multipl():
     for n in nums:
         result *= n
 
-    with open('output.txt', 'r') as f:
-        f.write(str(result))
+    with open('output.txt', 'w') as f:
+        f.write(f'{result}')
 
 #Task 2
 def natur():
@@ -22,7 +22,7 @@ def natur():
 
 #Task 3
 def child():
-    with open('kid.txt', 'r') as f:
+    with open('kid.txt', 'r', encoding='utf-8') as f:
         kid = []
         for s in f:
             data = s.strip().split()
@@ -32,10 +32,10 @@ def child():
     young = min(kid, key = lambda x: x[2])
     old = max(kid, key = lambda x : x[2])
 
-    with open('old.txt', 'w') as f:
-        f.write(f'{old[0]} {old[1]} {old[2]}')
-    with open('young.txt', 'w') as f:
-        f.write(f'{young[0]} {young[1]} {young[2]}')
+    with open('kidres.txt', 'w') as f:
+        f.write(f'{old[0]} {old[1]} {old[2]}\n')
+        f.write(f'{young[0]} {young[1]} {young[2]}\n')
+
 
 multipl()
 natur()
